@@ -48,8 +48,6 @@
 (defun m-sort (lst)
   (if (cdr lst)
       (merge-lr 
-        (m-sort (values (subseq lst 0 (floor (length lst) 2))))
-        (m-sort (values (subseq lst (floor (length lst) 2) (length lst)))))
+        (m-sort (subseq lst 0 (floor (length lst) 2)))
+        (m-sort (subseq lst (floor (length lst) 2) (length lst))))
       lst))
-
-
